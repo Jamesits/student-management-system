@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A83078D1C33F5E100A2F204 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83078C1C33F5E100A2F204 /* main.c */; };
+		1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307931C33F5EF00A2F204 /* sqlite3.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		1A8307891C33F5E000A2F204 /* JStudentManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JStudentManager; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A83078C1C33F5E100A2F204 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1A8307931C33F5EF00A2F204 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		1A8307941C33F5EF00A2F204 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		1A8307951C33F5EF00A2F204 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,9 @@
 		1A83078B1C33F5E000A2F204 /* JStudentManager */ = {
 			isa = PBXGroup;
 			children = (
+				1A8307931C33F5EF00A2F204 /* sqlite3.c */,
+				1A8307941C33F5EF00A2F204 /* sqlite3.h */,
+				1A8307951C33F5EF00A2F204 /* sqlite3ext.h */,
 				1A83078C1C33F5E100A2F204 /* main.c */,
 			);
 			path = JStudentManager;
@@ -119,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A83078D1C33F5E100A2F204 /* main.c in Sources */,
+				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
