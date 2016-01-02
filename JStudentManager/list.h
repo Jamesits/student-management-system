@@ -53,6 +53,8 @@ typedef struct list {
     list_node first_node;
 } *list;
 
+typedef list null_list;
+
 typedef void(*list_type_specific_initializer_type)(list);
 typedef bool(*list_type_specific_search_compare_function_type)(list, void*);
 typedef void(*list_type_specific_enumerator_yield_callback_function_type)(list_node);
