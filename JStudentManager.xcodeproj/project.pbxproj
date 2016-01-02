@@ -11,7 +11,7 @@
 		1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307931C33F5EF00A2F204 /* sqlite3.c */; };
 		1A8307991C3401F500A2F204 /* studentdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307971C3401F500A2F204 /* studentdb.c */; };
 		1A83079D1C34044A00A2F204 /* error_handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079B1C34044A00A2F204 /* error_handler.c */; };
-		1A8307A01C3406E700A2F204 /* db.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079E1C3406E700A2F204 /* db.c */; };
+		1A8307A01C3406E700A2F204 /* model.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079E1C3406E700A2F204 /* model.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,8 +37,8 @@
 		1A83079A1C34023200A2F204 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		1A83079B1C34044A00A2F204 /* error_handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error_handler.c; sourceTree = "<group>"; };
 		1A83079C1C34044A00A2F204 /* error_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error_handler.h; sourceTree = "<group>"; };
-		1A83079E1C3406E700A2F204 /* db.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = db.c; sourceTree = "<group>"; };
-		1A83079F1C3406E700A2F204 /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
+		1A83079E1C3406E700A2F204 /* model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = model.c; sourceTree = "<group>"; };
+		1A83079F1C3406E700A2F204 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 				1A83079A1C34023200A2F204 /* common.h */,
 				1A83079B1C34044A00A2F204 /* error_handler.c */,
 				1A83079C1C34044A00A2F204 /* error_handler.h */,
-				1A83079E1C3406E700A2F204 /* db.c */,
-				1A83079F1C3406E700A2F204 /* db.h */,
+				1A83079E1C3406E700A2F204 /* model.c */,
+				1A83079F1C3406E700A2F204 /* model.h */,
 			);
 			path = JStudentManager;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A83078D1C33F5E100A2F204 /* main.c in Sources */,
-				1A8307A01C3406E700A2F204 /* db.c in Sources */,
+				1A8307A01C3406E700A2F204 /* model.c in Sources */,
 				1A8307991C3401F500A2F204 /* studentdb.c in Sources */,
 				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
 				1A83079D1C34044A00A2F204 /* error_handler.c in Sources */,
