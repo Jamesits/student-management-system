@@ -13,4 +13,12 @@
 #include <string.h>
 #include <stdbool.h>
 
+#ifdef __STDC_NO_ATOMICS__
+#define _Atomic volatile
+#else
+#include <stdatomic.h>
+#endif
+
+typedef char* string;
+
 #endif /* common_h */

@@ -10,5 +10,8 @@
 #define student_list_h
 
 #include "common.h"
+#include "list.h"
+
+
 
 #endif /* student_list_h */

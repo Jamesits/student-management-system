@@ -14,6 +14,7 @@
 		1A8307A01C3406E700A2F204 /* model.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079E1C3406E700A2F204 /* model.c */; };
 		1A8307A31C3759BA00A2F204 /* organization_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A11C3759BA00A2F204 /* organization_list.c */; };
 		1A8307A61C3759CD00A2F204 /* student_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A41C3759CD00A2F204 /* student_list.c */; };
+		1A8307A91C375A4C00A2F204 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A71C375A4C00A2F204 /* list.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,8 @@
 		1A8307A21C3759BA00A2F204 /* organization_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = organization_list.h; sourceTree = "<group>"; };
 		1A8307A41C3759CD00A2F204 /* student_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = student_list.c; sourceTree = "<group>"; };
 		1A8307A51C3759CD00A2F204 /* student_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student_list.h; sourceTree = "<group>"; };
+		1A8307A71C375A4C00A2F204 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
+		1A8307A81C375A4C00A2F204 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				1A8307A21C3759BA00A2F204 /* organization_list.h */,
 				1A8307A41C3759CD00A2F204 /* student_list.c */,
 				1A8307A51C3759CD00A2F204 /* student_list.h */,
+				1A8307A71C375A4C00A2F204 /* list.c */,
+				1A8307A81C375A4C00A2F204 /* list.h */,
 			);
 			path = JStudentManager;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				1A8307A01C3406E700A2F204 /* model.c in Sources */,
 				1A8307A31C3759BA00A2F204 /* organization_list.c in Sources */,
 				1A8307991C3401F500A2F204 /* studentdb.c in Sources */,
+				1A8307A91C375A4C00A2F204 /* list.c in Sources */,
 				1A8307A61C3759CD00A2F204 /* student_list.c in Sources */,
 				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
 				1A83079D1C34044A00A2F204 /* error_handler.c in Sources */,
