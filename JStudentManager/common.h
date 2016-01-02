@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "sqlite3.h"
 
 #ifdef __STDC_NO_ATOMICS__
 #define _Atomic volatile
@@ -20,5 +21,6 @@
 #endif
 
 typedef char* string;
+typedef sqlite3 database;
 
 #endif /* common_h */

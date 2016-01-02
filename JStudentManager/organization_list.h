@@ -6,9 +6,17 @@
 //  Copyright © 2016 James Swineson. All rights reserved.
 //
 
-#ifndef organization_list_h
-#define organization_list_h
+#ifndef org_list_h
+#define org_list_h
 
-#include "common.h"
+#include "list.h"
 
-#endif /* organization_list_h */
+typedef list org_list;
+
+void org_list_data_init(list);
+void org_list_node_data_init(list_node);
+void org_list_node_data_free(list_node);
+string org_list_node_data_serialize(list_node);
+string org_list_data_serialize(list);
+
+#endif /* org_list_h */

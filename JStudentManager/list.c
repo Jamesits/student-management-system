@@ -11,7 +11,11 @@
 void null_list_data_init(list this)
 {
     this->data_size = 0;
-    //this->actionset = NULL;
+    this->actionset[ACTION_INIT] = null_list_data_init;
+    this->actionset[ACTION_NODE_INIT] = null_list_node_data_init;
+    this->actionset[ACTION_NODE_FREE] = null_list_node_data_free;
+    this->actionset[ACTION_NODE_DATA_SERIALIZE] = null_list_node_data_serialize;
+    this->actionset[ACTION_DATA_SERIALIZE] = null_list_data_serialize;
 };
 
 
@@ -37,18 +41,18 @@ string null_list_data_serialize(list this)
     return "NULL list";
 }
 
-list_node list_node_new()
+list_node list_node_new(list this)
 {
     list_node new_node = malloc(sizeof(list_node));
     new_node->next_node = NULL;
-    list_node_data_init(new_node);
+    list_action(ACTION_NODE_INIT)(new_node);
     return new_node;
 }
 
-void list_node_free(list_node node)
+void list_node_free(list this, list_node node)
 {
     if (!node) return;
-    list_node_data_free(node);
+    list_action(ACTION_NODE_FREE)(node);
     if (node->data) free(node->data);
     free(node);
 }
@@ -58,7 +62,7 @@ list list_new(list *this, list_type_specific_initializer_type init)
     *this = (list)malloc(sizeof(struct list));
     (*this)->length = 0;
     (*this)->first_node = NULL;
-    list_data_init(*this);
+    init(*this);
     return *this;
 };
 
@@ -67,7 +71,7 @@ void list_delete(list this)
     list_node temp;
     while (this->length) {
         temp = this->first_node->next_node;
-        list_node_free(this->first_node);
+        list_node_free(this, this->first_node);
         this->first_node = temp;
         this->length--;
     }
@@ -102,7 +106,7 @@ list list_remove(list this, list_node node)
     } else {
         this->first_node = node->next_node;
     }
-    list_node_free(node);
+    list_node_free(this, node);
     return this;
 };
 
@@ -112,5 +116,5 @@ void list_qsort(list, list_type_specific_sort_compare_function_type);
 
 string list_serialize(list this)
 {
-    return list_data_serialize(this);
+    return list_action(ACTION_DATA_SERIALIZE)(this);
 }

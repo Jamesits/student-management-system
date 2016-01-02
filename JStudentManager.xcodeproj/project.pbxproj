@@ -43,11 +43,12 @@
 		1A83079E1C3406E700A2F204 /* model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = model.c; sourceTree = "<group>"; };
 		1A83079F1C3406E700A2F204 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
 		1A8307A11C3759BA00A2F204 /* organization_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = organization_list.c; sourceTree = "<group>"; };
-		1A8307A21C3759BA00A2F204 /* organization_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = organization_list.h; sourceTree = "<group>"; };
 		1A8307A41C3759CD00A2F204 /* student_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = student_list.c; sourceTree = "<group>"; };
-		1A8307A51C3759CD00A2F204 /* student_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student_list.h; sourceTree = "<group>"; };
 		1A8307A71C375A4C00A2F204 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
 		1A8307A81C375A4C00A2F204 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		1A8307AA1C377A7900A2F204 /* templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = templates.h; sourceTree = "<group>"; };
+		1A8307AB1C37868500A2F204 /* student_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student_list.h; sourceTree = "<group>"; };
+		1A8307AC1C37876100A2F204 /* organization_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = organization_list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,11 +93,12 @@
 				1A8307971C3401F500A2F204 /* studentdb.c */,
 				1A8307981C3401F500A2F204 /* studentdb.h */,
 				1A8307A11C3759BA00A2F204 /* organization_list.c */,
-				1A8307A21C3759BA00A2F204 /* organization_list.h */,
+				1A8307AC1C37876100A2F204 /* organization_list.h */,
 				1A8307A41C3759CD00A2F204 /* student_list.c */,
-				1A8307A51C3759CD00A2F204 /* student_list.h */,
+				1A8307AB1C37868500A2F204 /* student_list.h */,
 				1A8307A71C375A4C00A2F204 /* list.c */,
 				1A8307A81C375A4C00A2F204 /* list.h */,
+				1A8307AA1C377A7900A2F204 /* templates.h */,
 			);
 			path = JStudentManager;
 			sourceTree = "<group>";

@@ -6,7 +6,7 @@
 //  Copyright © 2015 James Swineson. All rights reserved.
 //
 
-#include "db.h"
+#include "common.h"
 
 int first_row;
 
@@ -45,7 +45,7 @@ void sqlite_select_stmt(database *db, const char* stmt) {
     
     first_row = 1;
     
-    ret = sqlite3_exec(db, stmt, select_callback, &nrecs, &errmsg);
+    ret = sqlite3_exec(db, stmt, sqlite_select_callback, &nrecs, &errmsg);
     
     if(ret!=SQLITE_OK) {
         printf("Error in select statement %s [%s].\n", stmt, errmsg);

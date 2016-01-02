@@ -8,7 +8,6 @@
 
 #include "studentdb.h"
 #include "common.h"
-#include "db.h"
 
 static database* db;
 
