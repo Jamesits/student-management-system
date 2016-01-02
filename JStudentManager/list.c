@@ -8,9 +8,48 @@
 
 #include "list.h"
 
+void null_list_data_init(list this)
+{
+    this->data_size = 0;
+    //this->actionset = NULL;
+};
+
+
+void null_list_node_data_init(list_node this)
+{
+    this->data = NULL;
+};
+
+void null_list_node_data_free(list_node this)
+{
+    // nothing to do
+};
+
+string null_list_node_data_serialize(list_node this)
+{
+    return "NULL node";
+};
+
+string null_list_data_serialize(list this)
+{
+    string s = null_list_node_data_serialize(this->first_node);
+    free(s);
+    return "NULL list";
+}
+
+list_node list_node_new()
+{
+    list_node new_node = malloc(sizeof(list_node));
+    new_node->next_node = NULL;
+    list_node_data_init(new_node);
+    return new_node;
+}
+
 void list_node_free(list_node node)
 {
-    free(node->data);
+    if (!node) return;
+    list_node_data_free(node);
+    if (node->data) free(node->data);
     free(node);
 }
 
@@ -19,7 +58,7 @@ list list_new(list *this, list_type_specific_initializer_type init)
     *this = (list)malloc(sizeof(struct list));
     (*this)->length = 0;
     (*this)->first_node = NULL;
-    init(*this);
+    list_data_init(*this);
     return *this;
 };
 
@@ -70,4 +109,8 @@ list list_remove(list this, list_node node)
 list list_search(list, list_type_specific_search_compare_function_type, void*);
 void list_foreach(list, list_type_specific_enumerator_yield_callback_function_type);
 void list_qsort(list, list_type_specific_sort_compare_function_type);
-void list_serialize(list, list_type_specific_node_serializer_type);
+
+string list_serialize(list this)
+{
+    return list_data_serialize(this);
+}

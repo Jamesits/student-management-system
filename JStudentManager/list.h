@@ -13,10 +13,30 @@
 #include "organization_list.h"
 #include "student_list.h"
 
-#define new_list(X) _Generic((x), \
-                                student_list: new_student_list \
-                                organization_list: new_organization_list \
-                                )(X)
+#define new_list(X) _Generic((X), \
+    student_list: new_student_list \
+    organization_list: new_organization_list \
+)(X)
+
+#define list_data_init(X) _Generic((X), \
+    default: null_list_data_init \
+)(X)
+
+#define list_node_data_init(X) _Generic((X), \
+    default: null_list_node_data_init \
+)(X)
+
+#define list_node_data_free(X) _Generic((X), \
+    default: null_list_node_data_free \
+)(X)
+
+#define list_node_data_serialize(X) _Generic((X), \
+    default: null_list_node_data_serialize \
+)(X)
+
+#define list_data_serialize(X) _Generic((X), \
+    default: null_list_data_serialize \
+)(X)
 
 typedef struct list_node {
     struct list_node *next_node;
@@ -28,14 +48,7 @@ typedef struct list {
     long length;
     size_t data_size;
     struct list_actionset {
-        struct list (*action_new)(struct list*, void(*list_type_specific_initializer_type)(struct list));
-        void (*list_delete)(struct list);
-        struct list (*list_append)(struct list, list_node);
-        struct list (*list_remove)(struct list, list_node);
-        struct list (*list_search)(struct list, bool(*list_type_specific_search_compare_function_type)(struct list, void*), void*);
-        void (*list_foreach)(struct list, void(*list_type_specific_enumerator_yield_callback_function_type)(list_node));
-        void (*list_qsort)(struct list, int(*list_type_specific_sort_compare_function_type)(list_node, list_node));
-        void (*list_serialize)(struct list, string(*list_type_specific_node_serializer_type)(list_node));
+
     } actionset;
     list_node first_node;
 } *list;
@@ -53,6 +66,9 @@ list list_remove(list, list_node);
 list list_search(list, list_type_specific_search_compare_function_type, void*);
 void list_foreach(list, list_type_specific_enumerator_yield_callback_function_type);
 void list_qsort(list, list_type_specific_sort_compare_function_type);
-void list_serialize(list, list_type_specific_node_serializer_type);
+string list_serialize(list);
+
+void null_list_data_init(list);
+void null_list_node_data_init(list_node);
 
 #endif /* immutable_list_h */
