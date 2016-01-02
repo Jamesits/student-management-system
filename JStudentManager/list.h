@@ -10,8 +10,6 @@
 #define immutable_list_h
 
 #include "common.h"
-#include "organization_list.h"
-#include "student_list.h"
 
 #define new_list(X) _Generic((X), \
     student_list: new_student_list \
@@ -72,5 +70,9 @@ string list_serialize(list);
 
 void null_list_data_init(list);
 void null_list_node_data_init(list_node);
+void null_list_node_data_free(list_node);
+string null_list_node_data_serialize(list_node);
+string null_list_data_serialize(list);
+#include "list_types.h"
 
 #endif /* immutable_list_h */
