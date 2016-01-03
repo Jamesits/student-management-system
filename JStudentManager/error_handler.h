@@ -12,9 +12,9 @@
 
 #include <setjmp.h>
 
-#define try         if(!setjmp(exception_env))
-#define catch(X)    else { on_error(X); }
-#define throw(X)    longjmp(exception_env, X);
+#define try         if(!(exception_type=setjmp(exception_env)))
+#define catch(X)    else if(exception_type==X)
+#define throw(X)    longjmp(exception_env,X)
 
 typedef int exception_types;
 extern jmp_buf exception_env;
