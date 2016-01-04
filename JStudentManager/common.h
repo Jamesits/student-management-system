@@ -20,6 +20,8 @@
 #include <stdatomic.h>
 #endif
 
+#define gets_s(X, ...) gets(X)
+
 #include "../ctrycatch/ctrycatch.h"
 
 typedef char* string;

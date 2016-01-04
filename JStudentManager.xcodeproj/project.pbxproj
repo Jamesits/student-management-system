@@ -15,6 +15,7 @@
 		1A8307A61C3759CD00A2F204 /* student_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A41C3759CD00A2F204 /* student_list.c */; };
 		1A8307A91C375A4C00A2F204 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A71C375A4C00A2F204 /* list.c */; };
 		1A8307DA1C3A359400A2F204 /* ctrycatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307D81C3A359400A2F204 /* ctrycatch.c */; };
+		1A8307E01C3A369400A2F204 /* commandinterpreter.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307DE1C3A369400A2F204 /* commandinterpreter.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,8 @@
 		1A8307D71C3A359400A2F204 /* ctrycatch_exception_types.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ctrycatch_exception_types.conf; path = ctrycatch/ctrycatch_exception_types.conf; sourceTree = SOURCE_ROOT; };
 		1A8307D81C3A359400A2F204 /* ctrycatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ctrycatch.c; path = ctrycatch/ctrycatch.c; sourceTree = SOURCE_ROOT; };
 		1A8307D91C3A359400A2F204 /* ctrycatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ctrycatch.h; path = ctrycatch/ctrycatch.h; sourceTree = SOURCE_ROOT; };
+		1A8307DE1C3A369400A2F204 /* commandinterpreter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = commandinterpreter.c; sourceTree = "<group>"; };
+		1A8307DF1C3A369400A2F204 /* commandinterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commandinterpreter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 		1A83078B1C33F5E000A2F204 /* JStudentManager */ = {
 			isa = PBXGroup;
 			children = (
+				1A8307E11C3A369E00A2F204 /* CommandInterpreter */,
 				1A83079A1C34023200A2F204 /* common.h */,
 				1A8307DB1C3A359C00A2F204 /* CTryCatch */,
 				1A8307DD1C3A35D000A2F204 /* lists */,
@@ -145,6 +149,15 @@
 				1A8307A81C375A4C00A2F204 /* list.h */,
 			);
 			name = lists;
+			sourceTree = "<group>";
+		};
+		1A8307E11C3A369E00A2F204 /* CommandInterpreter */ = {
+			isa = PBXGroup;
+			children = (
+				1A8307DE1C3A369400A2F204 /* commandinterpreter.c */,
+				1A8307DF1C3A369400A2F204 /* commandinterpreter.h */,
+			);
+			name = CommandInterpreter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A83078D1C33F5E100A2F204 /* main.c in Sources */,
+				1A8307E01C3A369400A2F204 /* commandinterpreter.c in Sources */,
 				1A8307A01C3406E700A2F204 /* model.c in Sources */,
 				1A8307DA1C3A359400A2F204 /* ctrycatch.c in Sources */,
 				1A8307A31C3759BA00A2F204 /* organization_list.c in Sources */,

@@ -8,8 +8,15 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <time.h>
+#include "common.h"
+#include "commandinterpreter.h"
 
 int main(int argc, char* argv[]) {
-    
+
+    //srand((unsigned)time(NULL));
+    loop();
     return 0;
 }
