@@ -8,9 +8,11 @@
 
 #include "organization_list.h"
 
+org_list orginzations;
+
 void org_list_data_init(list this)
 {
-    this->data_size = 0;
+    this->data_size = sizeof(struct org_list_data);
     this->actionset[ACTION_INIT] = org_list_data_init;
     this->actionset[ACTION_NODE_INIT] = org_list_node_data_init;
     this->actionset[ACTION_NODE_FREE] = org_list_node_data_free;
@@ -18,25 +20,26 @@ void org_list_data_init(list this)
     this->actionset[ACTION_DATA_SERIALIZE] = org_list_data_serialize;
 };
 
-
 void org_list_node_data_init(list_node this)
 {
-    this->data = NULL;
+    //if (this->data != NULL) throw(ArgumentException, "Node is not empty");
+    this->data = (org_list_data)malloc(sizeof(struct org_list_data));
 };
 
 void org_list_node_data_free(list_node this)
 {
-    // nothing to do
+    free(this->data);
+    this->data = NULL;
 };
 
 string org_list_node_data_serialize(list_node this)
 {
-    return "org node";
+    // TODO
+    return "";
 };
 
 string org_list_data_serialize(list this)
 {
-    string s = org_list_node_data_serialize(this->first_node);
-    free(s);
+    // TODO
     return "org list";
 }

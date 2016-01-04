@@ -50,5 +50,13 @@ COMMAND(sqlite_query_all_students)
     return EXIT_SUCCESS;
 }
 
-COMMAND(sqlite_to_list);
+COMMAND(sqlite_to_list)
+{
+    try {
+        database_to_org_list();
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    return EXIT_SUCCESS;
+}
 COMMAND(sqlite_from_list);

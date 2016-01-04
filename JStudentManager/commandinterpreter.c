@@ -32,10 +32,11 @@ cmd_dict commands[] = {
 	{ "UNAME",	version,	"" },
 	{ "VER",	version,	"Displays the software version." },
 	{ "VERSION",version,	"" },
-    { "DBLOAD", sqlite_load, "" },
-    { "DBSAVE", sqlite_save, "" },
+    { "DBOPEN", sqlite_load, "" },
+    { "DBCLOSE", sqlite_save, "" },
     { "DBPSTU", sqlite_query_all_students, "" },
     { "DBPORG", sqlite_query_all_orgs, "" },
+    { "DBLOAD", sqlite_to_list, "" },
 };
 
 static bool mute = false;

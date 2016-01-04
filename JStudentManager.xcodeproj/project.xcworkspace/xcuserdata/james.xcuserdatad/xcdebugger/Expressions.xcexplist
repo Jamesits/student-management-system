@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "database_to_org_list_callback:studentdb.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "p_fields[0]">
+            </PersistentString>
+            <PersistentString
+               value = "p_fields[2]">
+            </PersistentString>
+            <PersistentString
+               value = "(org_list_data)new_org_node-&gt;data">
+            </PersistentString>
+            <PersistentString
+               value = "p_fields[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

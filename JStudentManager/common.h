@@ -20,6 +20,7 @@
 #include <stdatomic.h>
 #endif
 
+#define new(X, ...) (X)malloc((__VA_ARGS__ +1) * sizeof(X))
 #define gets_s(X, ...) gets(X)
 
 #include "../ctrycatch/ctrycatch.h"

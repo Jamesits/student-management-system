@@ -8,7 +8,7 @@
 
 #include "common.h"
 
-int first_row;
+static int first_row;
 
 int sqlite_select_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names) {
     
@@ -39,6 +39,23 @@ int sqlite_select_callback(void *p_data, int num_fields, char **p_fields, char *
 }
 
 void sqlite_select_stmt(database *db, const char* stmt) {
+    char *errmsg;
+    int   ret;
+    int   nrecs = 0;
+    
+    first_row = 1;
+    
+    ret = sqlite3_exec(db, stmt, sqlite_select_callback, &nrecs, &errmsg);
+    
+    if(ret!=SQLITE_OK) {
+        printf("Error in select statement %s [%s].\n", stmt, errmsg);
+    }
+    else {
+        printf("\n   %d records returned.\n", nrecs);
+    }
+}
+
+void sqlite_select_stmt_with_custom_callback(database *db, const char* stmt, int (*sqlite_select_callback)(void *p_data, int num_fields, char **p_fields, char **p_col_names)) {
     char *errmsg;
     int   ret;
     int   nrecs = 0;
