@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JStudentManager.xcscheme</key>
+		<key>CTryCatchTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A8307881C33F5E000A2F204</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1A8307B51C39537900A2F204</key>
+		<key>1A8307C81C39649600A2F204</key>
 		<dict>
 			<key>primary</key>
 			<true/>

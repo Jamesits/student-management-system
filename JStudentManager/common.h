@@ -20,6 +20,8 @@
 #include <stdatomic.h>
 #endif
 
+#include "../ctrycatch/ctrycatch.h"
+
 typedef char* string;
 typedef sqlite3 database;
 

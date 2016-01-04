@@ -1,0 +1,3 @@
+[submodule "ctrycatch"]
+	path = ctrycatch
+	url = https://github.com/Jamesits/CTryCatch.git

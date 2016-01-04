@@ -10,15 +10,24 @@
 		1A83078D1C33F5E100A2F204 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83078C1C33F5E100A2F204 /* main.c */; };
 		1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307931C33F5EF00A2F204 /* sqlite3.c */; };
 		1A8307991C3401F500A2F204 /* studentdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307971C3401F500A2F204 /* studentdb.c */; };
-		1A83079D1C34044A00A2F204 /* error_handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079B1C34044A00A2F204 /* error_handler.c */; };
 		1A8307A01C3406E700A2F204 /* model.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A83079E1C3406E700A2F204 /* model.c */; };
 		1A8307A31C3759BA00A2F204 /* organization_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A11C3759BA00A2F204 /* organization_list.c */; };
 		1A8307A61C3759CD00A2F204 /* student_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A41C3759CD00A2F204 /* student_list.c */; };
 		1A8307A91C375A4C00A2F204 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A71C375A4C00A2F204 /* list.c */; };
+		1A8307DA1C3A359400A2F204 /* ctrycatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307D81C3A359400A2F204 /* ctrycatch.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1A8307871C33F5E000A2F204 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		1A8307B41C39537900A2F204 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -38,8 +47,6 @@
 		1A8307971C3401F500A2F204 /* studentdb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = studentdb.c; sourceTree = "<group>"; };
 		1A8307981C3401F500A2F204 /* studentdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = studentdb.h; sourceTree = "<group>"; };
 		1A83079A1C34023200A2F204 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		1A83079B1C34044A00A2F204 /* error_handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error_handler.c; sourceTree = "<group>"; };
-		1A83079C1C34044A00A2F204 /* error_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error_handler.h; sourceTree = "<group>"; };
 		1A83079E1C3406E700A2F204 /* model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = model.c; sourceTree = "<group>"; };
 		1A83079F1C3406E700A2F204 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
 		1A8307A11C3759BA00A2F204 /* organization_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = organization_list.c; sourceTree = "<group>"; };
@@ -49,10 +56,21 @@
 		1A8307AA1C377A7900A2F204 /* templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = templates.h; sourceTree = "<group>"; };
 		1A8307AB1C37868500A2F204 /* student_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student_list.h; sourceTree = "<group>"; };
 		1A8307AC1C37876100A2F204 /* organization_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = organization_list.h; sourceTree = "<group>"; };
+		1A8307B61C39537900A2F204 /* ErrorHandlerTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ErrorHandlerTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8307D71C3A359400A2F204 /* ctrycatch_exception_types.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ctrycatch_exception_types.conf; path = ctrycatch/ctrycatch_exception_types.conf; sourceTree = SOURCE_ROOT; };
+		1A8307D81C3A359400A2F204 /* ctrycatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ctrycatch.c; path = ctrycatch/ctrycatch.c; sourceTree = SOURCE_ROOT; };
+		1A8307D91C3A359400A2F204 /* ctrycatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ctrycatch.h; path = ctrycatch/ctrycatch.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1A8307861C33F5E000A2F204 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A8307B31C39537900A2F204 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8307891C33F5E000A2F204 /* JStudentManager */,
+				1A8307B61C39537900A2F204 /* ErrorHandlerTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,25 +101,50 @@
 			isa = PBXGroup;
 			children = (
 				1A83079A1C34023200A2F204 /* common.h */,
-				1A83079B1C34044A00A2F204 /* error_handler.c */,
-				1A83079C1C34044A00A2F204 /* error_handler.h */,
+				1A8307DB1C3A359C00A2F204 /* CTryCatch */,
+				1A8307DD1C3A35D000A2F204 /* lists */,
 				1A83078C1C33F5E100A2F204 /* main.c */,
 				1A83079E1C3406E700A2F204 /* model.c */,
 				1A83079F1C3406E700A2F204 /* model.h */,
+				1A8307DC1C3A35C200A2F204 /* SQLite3 */,
+				1A8307971C3401F500A2F204 /* studentdb.c */,
+				1A8307981C3401F500A2F204 /* studentdb.h */,
+				1A8307AA1C377A7900A2F204 /* templates.h */,
+			);
+			path = JStudentManager;
+			sourceTree = "<group>";
+		};
+		1A8307DB1C3A359C00A2F204 /* CTryCatch */ = {
+			isa = PBXGroup;
+			children = (
+				1A8307D71C3A359400A2F204 /* ctrycatch_exception_types.conf */,
+				1A8307D81C3A359400A2F204 /* ctrycatch.c */,
+				1A8307D91C3A359400A2F204 /* ctrycatch.h */,
+			);
+			name = CTryCatch;
+			sourceTree = "<group>";
+		};
+		1A8307DC1C3A35C200A2F204 /* SQLite3 */ = {
+			isa = PBXGroup;
+			children = (
 				1A8307931C33F5EF00A2F204 /* sqlite3.c */,
 				1A8307941C33F5EF00A2F204 /* sqlite3.h */,
 				1A8307951C33F5EF00A2F204 /* sqlite3ext.h */,
-				1A8307971C3401F500A2F204 /* studentdb.c */,
-				1A8307981C3401F500A2F204 /* studentdb.h */,
+			);
+			name = SQLite3;
+			sourceTree = "<group>";
+		};
+		1A8307DD1C3A35D000A2F204 /* lists */ = {
+			isa = PBXGroup;
+			children = (
 				1A8307A11C3759BA00A2F204 /* organization_list.c */,
 				1A8307AC1C37876100A2F204 /* organization_list.h */,
 				1A8307A41C3759CD00A2F204 /* student_list.c */,
 				1A8307AB1C37868500A2F204 /* student_list.h */,
 				1A8307A71C375A4C00A2F204 /* list.c */,
 				1A8307A81C375A4C00A2F204 /* list.h */,
-				1A8307AA1C377A7900A2F204 /* templates.h */,
 			);
-			path = JStudentManager;
+			name = lists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +167,23 @@
 			productReference = 1A8307891C33F5E000A2F204 /* JStudentManager */;
 			productType = "com.apple.product-type.tool";
 		};
+		1A8307B51C39537900A2F204 /* ErrorHandlerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A8307BA1C39537900A2F204 /* Build configuration list for PBXNativeTarget "ErrorHandlerTest" */;
+			buildPhases = (
+				1A8307B21C39537900A2F204 /* Sources */,
+				1A8307B31C39537900A2F204 /* Frameworks */,
+				1A8307B41C39537900A2F204 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ErrorHandlerTest;
+			productName = ErrorHandlerTest;
+			productReference = 1A8307B61C39537900A2F204 /* ErrorHandlerTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -133,6 +194,9 @@
 				ORGANIZATIONNAME = "James Swineson";
 				TargetAttributes = {
 					1A8307881C33F5E000A2F204 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					1A8307B51C39537900A2F204 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -150,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				1A8307881C33F5E000A2F204 /* JStudentManager */,
+				1A8307B51C39537900A2F204 /* ErrorHandlerTest */,
 			);
 		};
 /* End PBXProject section */
@@ -161,12 +226,19 @@
 			files = (
 				1A83078D1C33F5E100A2F204 /* main.c in Sources */,
 				1A8307A01C3406E700A2F204 /* model.c in Sources */,
+				1A8307DA1C3A359400A2F204 /* ctrycatch.c in Sources */,
 				1A8307A31C3759BA00A2F204 /* organization_list.c in Sources */,
 				1A8307991C3401F500A2F204 /* studentdb.c in Sources */,
 				1A8307A91C375A4C00A2F204 /* list.c in Sources */,
 				1A8307A61C3759CD00A2F204 /* student_list.c in Sources */,
 				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
-				1A83079D1C34044A00A2F204 /* error_handler.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A8307B21C39537900A2F204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +338,20 @@
 			};
 			name = Release;
 		};
+		1A8307BB1C39537900A2F204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1A8307BC1C39537900A2F204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -283,6 +369,14 @@
 			buildConfigurations = (
 				1A8307911C33F5E100A2F204 /* Debug */,
 				1A8307921C33F5E100A2F204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A8307BA1C39537900A2F204 /* Build configuration list for PBXNativeTarget "ErrorHandlerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8307BB1C39537900A2F204 /* Debug */,
+				1A8307BC1C39537900A2F204 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
