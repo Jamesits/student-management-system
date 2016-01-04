@@ -24,6 +24,6 @@ void org_list_node_data_free(list_node);
 string org_list_node_data_serialize(list_node);
 string org_list_data_serialize(list);
 
-extern org_list orginzations;
+extern org_list organizations;
 
 #endif /* org_list_h */

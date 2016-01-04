@@ -37,6 +37,7 @@ cmd_dict commands[] = {
     { "DBPSTU", sqlite_query_all_students, "" },
     { "DBPORG", sqlite_query_all_orgs, "" },
     { "DBLOAD", sqlite_to_list, "" },
+    { "PORG", list_query_all_orgs, "" },
 };
 
 static bool mute = false;

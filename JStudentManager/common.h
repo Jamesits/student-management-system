@@ -20,6 +20,13 @@
 #include <stdatomic.h>
 #endif
 
+// bstring library
+#include "../bstrlib/bstrlib.h"
+#include "../bstrlib/utf8util.h"
+#include "../bstrlib/bstraux.h"
+// uncommenting the following file will disable unsafe C calls
+//#include "../bstrlib/bsafe.h"
+
 #define new(X, ...) (X)malloc((__VA_ARGS__ +1) * sizeof(X))
 #define gets_s(X, ...) gets(X)
 

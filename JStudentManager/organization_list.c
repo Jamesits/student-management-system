@@ -8,7 +8,7 @@
 
 #include "organization_list.h"
 
-org_list orginzations;
+org_list organizations;
 
 void org_list_data_init(list this)
 {
@@ -35,7 +35,12 @@ void org_list_node_data_free(list_node this)
 string org_list_node_data_serialize(list_node this)
 {
     // TODO
-    return "";
+    org_list_data data = this->data;
+    bstring str = bformat("Organization: #%ld, %s, parent #%ld\n", data->id, data->name, data->parent);
+    string s = bstr2cstr(str, ' ');
+    string result = malloc(strlen(s) * sizeof(char));
+    strcpy(result, s);
+    return result;
 };
 
 string org_list_data_serialize(list this)

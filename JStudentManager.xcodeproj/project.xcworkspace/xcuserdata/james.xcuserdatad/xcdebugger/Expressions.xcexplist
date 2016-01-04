@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "org_list_node_data_serialize:organization_list.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(org_list_data)data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "loop:commandinterpreter.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "orginzations-&gt;first_node-&gt;next_node">
+            </PersistentString>
+            <PersistentString
+               value = "(org_list_data)orginzations-&gt;first_node-&gt;data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "database_to_org_list_callback:studentdb.c">
          <PersistentStrings>
             <PersistentString
@@ -12,12 +31,18 @@
                value = "p_fields[2]">
             </PersistentString>
             <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
                value = "(org_list_data)new_org_node-&gt;data">
             </PersistentString>
             <PersistentString
                value = "p_fields[1]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "list_foreach:list.c">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

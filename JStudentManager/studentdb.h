@@ -17,4 +17,5 @@ void database_query_all_orgs();
 void database_query_all_students();
 void database_to_org_list();
 
+void list_print_all_orgs();
 #endif /* studentdb_h */

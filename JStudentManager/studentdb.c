@@ -52,8 +52,7 @@ int database_to_org_list_callback(void *p_data, int num_fields, char **p_fields,
     
     int i;
     int *p_rn = (int*)p_data;
-    if (orginzations != NULL) list_delete(orginzations);
-    list_new(&orginzations, org_list_data_init);
+    
     if (first_row) {
         first_row = 0;
         
@@ -69,13 +68,13 @@ int database_to_org_list_callback(void *p_data, int num_fields, char **p_fields,
     
     (*p_rn)++;
     
+    list_node new_org_node = new(list_node);
+    org_list_node_data_init(new_org_node);
+    org_list_data data = (org_list_data)new_org_node->data;
     for(i=0; i < num_fields; i++) {
         printf("%20s", p_fields[i]);
         fflush(stdout);
         //continue;
-        list_node new_org_node = new(list_node);
-        org_list_node_data_init(new_org_node);
-        org_list_data data = (org_list_data)new_org_node->data;
         switch (i) {
             case 0:
                 sscanf(p_fields[i], "%ld", &(data->id));
@@ -92,14 +91,27 @@ int database_to_org_list_callback(void *p_data, int num_fields, char **p_fields,
             default:
                 break;
         }
-        list_append(orginzations, new_org_node);
     }
-    
+    list_append(organizations, new_org_node);
     printf("\n");
     return 0;
 }
 
 void database_to_org_list()
 {
+    if (organizations != NULL) list_delete(organizations);
+    list_new(&organizations, org_list_data_init);
     sqlite_select_stmt_with_custom_callback(db, "select * from `organizations`", database_to_org_list_callback);
+}
+
+void print_org_node(list_node this)
+{
+    string str = ((list_ACTION_NODE_DATA_SERIALIZE_function_type)(organizations->actionset[ACTION_NODE_DATA_SERIALIZE]))(this);
+    printf("\t%s", str);
+    free(str);
+}
+
+void list_print_all_orgs()
+{
+    list_foreach(organizations, print_org_node);
 }

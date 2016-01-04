@@ -107,11 +107,21 @@ list list_remove(list this, list_node node)
         this->first_node = node->next_node;
     }
     list_node_free(this, node);
+    this->length--;
     return this;
 };
 
 list list_search(list, list_type_specific_search_compare_function_type, void*);
-void list_foreach(list, list_type_specific_enumerator_yield_callback_function_type);
+
+void list_foreach(list this, list_type_specific_enumerator_yield_callback_function_type yield_func)
+{
+    list_node current_node = this->first_node;
+    while (current_node) {
+        yield_func(current_node);
+        current_node = current_node -> next_node;
+    }
+}
+
 void list_qsort(list, list_type_specific_sort_compare_function_type);
 
 string list_serialize(list this)

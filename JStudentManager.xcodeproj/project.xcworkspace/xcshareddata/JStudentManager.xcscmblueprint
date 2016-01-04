@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6AE6F4B663ADB17CD05C4D7746DD7B652B866AFE" : 0,
     "5A47C2B3A12BD84ACCCC236B3059BC9FD93877EC" : 0,
     "BE25A8CF00A3F314A0F2882F2D1FFE73C07BADEC" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D3978A46-A9D0-4BC8-9EAD-9AA7BCCD374A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6AE6F4B663ADB17CD05C4D7746DD7B652B866AFE" : "JStudentManager\/bstrlib\/",
     "5A47C2B3A12BD84ACCCC236B3059BC9FD93877EC" : "JStudentManager\/ctrycatch\/",
     "BE25A8CF00A3F314A0F2882F2D1FFE73C07BADEC" : "JStudentManager\/"
   },
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Jamesits\/CTryCatch.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5A47C2B3A12BD84ACCCC236B3059BC9FD93877EC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/websnarf\/bstrlib",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6AE6F4B663ADB17CD05C4D7746DD7B652B866AFE"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Jamesits\/student-management-system.git",

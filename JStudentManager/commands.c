@@ -32,6 +32,7 @@ COMMAND(sqlite_save)
 
 COMMAND(sqlite_query_all_orgs)
 {
+    puts("DEBUG: printing all orgs from sqlite db");
     try {
         database_query_all_orgs();
     } catch() {
@@ -42,6 +43,7 @@ COMMAND(sqlite_query_all_orgs)
 
 COMMAND(sqlite_query_all_students)
 {
+    puts("DEBUG: printing all students from sqlite db");
     try {
         database_query_all_students();
     } catch() {
@@ -60,3 +62,14 @@ COMMAND(sqlite_to_list)
     return EXIT_SUCCESS;
 }
 COMMAND(sqlite_from_list);
+
+COMMAND(list_query_all_orgs)
+{
+    puts("DEBUG: printing all orgs from list db");
+    try {
+        list_print_all_orgs();
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    return EXIT_SUCCESS;
+}
