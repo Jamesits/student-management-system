@@ -16,6 +16,7 @@
 		1A8307A91C375A4C00A2F204 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307A71C375A4C00A2F204 /* list.c */; };
 		1A8307DA1C3A359400A2F204 /* ctrycatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307D81C3A359400A2F204 /* ctrycatch.c */; };
 		1A8307E01C3A369400A2F204 /* commandinterpreter.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307DE1C3A369400A2F204 /* commandinterpreter.c */; };
+		1A8307E41C3A3A9A00A2F204 /* commands.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307E21C3A3A9A00A2F204 /* commands.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,8 @@
 		1A8307D91C3A359400A2F204 /* ctrycatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ctrycatch.h; path = ctrycatch/ctrycatch.h; sourceTree = SOURCE_ROOT; };
 		1A8307DE1C3A369400A2F204 /* commandinterpreter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = commandinterpreter.c; sourceTree = "<group>"; };
 		1A8307DF1C3A369400A2F204 /* commandinterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commandinterpreter.h; sourceTree = "<group>"; };
+		1A8307E21C3A3A9A00A2F204 /* commands.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = commands.c; sourceTree = "<group>"; };
+		1A8307E31C3A3A9A00A2F204 /* commands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commands.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 		1A8307E11C3A369E00A2F204 /* CommandInterpreter */ = {
 			isa = PBXGroup;
 			children = (
+				1A8307E21C3A3A9A00A2F204 /* commands.c */,
+				1A8307E31C3A3A9A00A2F204 /* commands.h */,
 				1A8307DE1C3A369400A2F204 /* commandinterpreter.c */,
 				1A8307DF1C3A369400A2F204 /* commandinterpreter.h */,
 			);
@@ -246,6 +251,7 @@
 				1A8307A91C375A4C00A2F204 /* list.c in Sources */,
 				1A8307A61C3759CD00A2F204 /* student_list.c in Sources */,
 				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
+				1A8307E41C3A3A9A00A2F204 /* commands.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

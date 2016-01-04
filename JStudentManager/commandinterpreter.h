@@ -23,5 +23,6 @@ int quit(char *arg);
 int save(char *arg);
 int load(char *arg);
 
+#include "commands.h"
 
 #endif

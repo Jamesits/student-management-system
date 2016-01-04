@@ -11,7 +11,9 @@
 #define studentdb_h
 #include "common.h"
 
-bool database_initialize();
-bool database_close();
+void database_initialize();
+void database_close();
+void database_query_all_orgs();
+void database_query_all_students();
 
 #endif /* studentdb_h */

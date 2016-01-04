@@ -14,4 +14,7 @@
 
 typedef sqlite3 database;
 
+int sqlite_select_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names);
+void sqlite_select_stmt(database *db, const char* stmt);
+void sqlite_sql_stmt(database *db, const char* stmt);
 #endif /* db_h */
