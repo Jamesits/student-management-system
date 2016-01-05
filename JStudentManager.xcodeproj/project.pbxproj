@@ -22,6 +22,7 @@
 		1A8307FE1C3A62D600A2F204 /* bstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307EB1C3A62D600A2F204 /* bstrlib.c */; };
 		1A8308001C3A62D600A2F204 /* buniutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307F01C3A62D600A2F204 /* buniutil.c */; };
 		1A8308041C3A62D600A2F204 /* utf8util.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307F91C3A62D600A2F204 /* utf8util.c */; };
+		1A8308081C3B4E6B00A2F204 /* orgtree.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8308061C3B4E6B00A2F204 /* orgtree.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		1A8307F11C3A62D600A2F204 /* buniutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buniutil.h; sourceTree = "<group>"; };
 		1A8307F91C3A62D600A2F204 /* utf8util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf8util.c; sourceTree = "<group>"; };
 		1A8307FA1C3A62D600A2F204 /* utf8util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8util.h; sourceTree = "<group>"; };
+		1A8308061C3B4E6B00A2F204 /* orgtree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = orgtree.c; sourceTree = "<group>"; };
+		1A8308071C3B4E6B00A2F204 /* orgtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orgtree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 				1A8307971C3401F500A2F204 /* studentdb.c */,
 				1A8307981C3401F500A2F204 /* studentdb.h */,
 				1A8307AA1C377A7900A2F204 /* templates.h */,
+				1A8308051C3B4E1E00A2F204 /* UI */,
 			);
 			path = JStudentManager;
 			sourceTree = "<group>";
@@ -182,6 +186,15 @@
 			path = bstrlib;
 			sourceTree = SOURCE_ROOT;
 		};
+		1A8308051C3B4E1E00A2F204 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1A8308061C3B4E6B00A2F204 /* orgtree.c */,
+				1A8308071C3B4E6B00A2F204 /* orgtree.h */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,6 +253,7 @@
 			files = (
 				1A8307FE1C3A62D600A2F204 /* bstrlib.c in Sources */,
 				1A83078D1C33F5E100A2F204 /* main.c in Sources */,
+				1A8308081C3B4E6B00A2F204 /* orgtree.c in Sources */,
 				1A8307E01C3A369400A2F204 /* commandinterpreter.c in Sources */,
 				1A8307A01C3406E700A2F204 /* model.c in Sources */,
 				1A8307FB1C3A62D600A2F204 /* bsafe.c in Sources */,

@@ -38,6 +38,8 @@ cmd_dict commands[] = {
     { "DBPORG", sqlite_query_all_orgs, "" },
     { "DBLOAD", sqlite_to_list, "" },
     { "PORG", list_query_all_orgs, "" },
+    { "DIR", display_orgtree, "Display organization list." },
+    { "LS", display_orgtree, "" },
 };
 
 static bool mute = false;

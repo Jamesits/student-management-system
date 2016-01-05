@@ -19,5 +19,6 @@ COMMAND(sqlite_query_all_students);
 COMMAND(sqlite_to_list);
 COMMAND(sqlite_from_list);
 COMMAND(list_query_all_orgs);
+COMMAND(display_orgtree);
 
 #endif

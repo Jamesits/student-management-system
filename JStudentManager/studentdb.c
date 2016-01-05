@@ -11,8 +11,8 @@
 #include "model.h"
 #include "organization_list.h"
 
-static database* db;
-static string db_path = "/Users/james/Copy/Code/Data Structure/JStudentManager/JStudentManager/studentdb";
+database* db;
+const string db_path = "/Users/james/Copy/Code/Data Structure/JStudentManager/JStudentManager/studentdb";
 static int first_row;
 
 bool fileExists(const char *filename)
@@ -52,28 +52,14 @@ int database_to_org_list_callback(void *p_data, int num_fields, char **p_fields,
     
     int i;
     int *p_rn = (int*)p_data;
-    
-    if (first_row) {
-        first_row = 0;
-        
-        //for(i=0; i < num_fields; i++) {
-        //    printf("%20s", p_col_names[i]);
-        //}
-        //printf("\n");
-        //for(i=0; i< num_fields*20; i++) {
-        //    printf("=");
-        //}
-        //printf("\n");
-    }
-    
     (*p_rn)++;
     
     list_node new_org_node = new(list_node);
     org_list_node_data_init(new_org_node);
     org_list_data data = (org_list_data)new_org_node->data;
     for(i=0; i < num_fields; i++) {
-        printf("%20s", p_fields[i]);
-        fflush(stdout);
+        //printf("%20s", p_fields[i]);
+        //fflush(stdout);
         //continue;
         switch (i) {
             case 0:
@@ -93,7 +79,7 @@ int database_to_org_list_callback(void *p_data, int num_fields, char **p_fields,
         }
     }
     list_append(organizations, new_org_node);
-    printf("\n");
+    //printf("\n");
     return 0;
 }
 
@@ -114,4 +100,10 @@ void print_org_node(list_node this)
 void list_print_all_orgs()
 {
     list_foreach(organizations, print_org_node);
+}
+
+string build_org_list()
+{
+    // TODO
+    return NULL;
 }

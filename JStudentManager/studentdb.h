@@ -11,6 +11,9 @@
 #define studentdb_h
 #include "common.h"
 
+extern database* db;
+extern const string db_path;
+
 void database_initialize();
 void database_close();
 void database_query_all_orgs();

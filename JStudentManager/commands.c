@@ -9,6 +9,7 @@
 #include "common.h"
 #include "commands.h"
 #include "studentdb.h"
+#include "orgtree.h"
 
 COMMAND(sqlite_load)
 {
@@ -68,6 +69,16 @@ COMMAND(list_query_all_orgs)
     puts("DEBUG: printing all orgs from list db");
     try {
         list_print_all_orgs();
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    return EXIT_SUCCESS;
+}
+
+COMMAND(display_orgtree)
+{
+    try {
+        org_db_display();
     } catch() {
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }
