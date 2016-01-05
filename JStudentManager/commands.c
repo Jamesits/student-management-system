@@ -10,6 +10,7 @@
 #include "commands.h"
 #include "studentdb.h"
 #include "orgtree.h"
+#include "model.h"
 
 COMMAND(sqlite_load)
 {
@@ -82,5 +83,11 @@ COMMAND(display_orgtree)
     } catch() {
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }
+    return EXIT_SUCCESS;
+}
+
+COMMAND(sql)
+{
+    sqlite_select_stmt(db, args);
     return EXIT_SUCCESS;
 }

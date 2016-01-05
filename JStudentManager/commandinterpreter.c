@@ -40,6 +40,7 @@ cmd_dict commands[] = {
     { "PORG", list_query_all_orgs, "" },
     { "DIR", display_orgtree, "Display organization list." },
     { "LS", display_orgtree, "" },
+    { "SQL", sql, "" },
 };
 
 static bool mute = false;
