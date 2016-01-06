@@ -134,9 +134,15 @@ COMMAND(stu_add)
     int age;
     long org;
     int temp;
+    clearbuffer(stdin);
     printf("ID[auto]: ");
-    temp = scanf("%[^\n]ld", &id);
-    if (temp != 1) id = -1;
+    temp = getchar();
+    if (temp != '\n') {
+        char ids[100];
+        ids[0] = temp;
+        scanf("%s", ids + 1);
+        sscanf(ids, "%ld", &id);
+    } else id = -1;
     clearbuffer(stdin);
     printf("Name: ");
     scanf(STU_NAME_FMT, name);
@@ -153,6 +159,18 @@ COMMAND(stu_add)
     clearbuffer(stdin);
     try {
         stu_db_add(id, name, sex, age, org);
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    return EXIT_SUCCESS;
+}
+
+COMMAND(stu_del)
+{
+    try {
+        long id;
+        sscanf(args, "%ld", &id);
+        stu_db_del(id);
     } catch() {
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }

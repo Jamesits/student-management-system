@@ -45,6 +45,7 @@ cmd_dict commands[] = {
     { "ADDORG", org_add, "Add an orginzation" },
     { "DELORG", org_del, "Removes an orginzation (and everything under it)" },
     { "ADDSTU", stu_add, "Add a student" },
+    { "DELSTU", stu_del, "Delete a student" },
 };
 
 static bool mute = false;

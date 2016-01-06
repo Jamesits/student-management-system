@@ -70,6 +70,11 @@ void stu_db_add(long id, string name, int sex, int age, long org)
     if (id == -1) {
         sqlite_select_stmt(db, dsprintf("INSERT INTO `students` (name, sex, age, organization) VALUES ('%s', %d, %d, %ld)", name, sex, age, org));
     } else {
-        sqlite_select_stmt(db, dsprintf("INSERT INTO `students` (id, name, sex, age, organization) VALUES (%ld, '%s', %d, %d, %ld)", name, sex, age, org));
+        sqlite_select_stmt(db, dsprintf("INSERT INTO `students` (id, name, sex, age, organization) VALUES (%ld, '%s', %d, %d, %ld)", id, name, sex, age, org));
     }
+}
+
+void stu_db_del(long id)
+{
+    sqlite_sql_stmt(db, dsprintf("DELETE FROM `students` WHERE id=%ld", id));
 }
