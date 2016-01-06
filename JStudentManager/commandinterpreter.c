@@ -32,15 +32,18 @@ cmd_dict commands[] = {
 	{ "UNAME",	version,	"" },
 	{ "VER",	version,	"Displays the software version." },
 	{ "VERSION",version,	"" },
-    { "DBOPEN", sqlite_load, "" },
-    { "DBCLOSE", sqlite_save, "" },
-    { "DBPSTU", sqlite_query_all_students, "" },
-    { "DBPORG", sqlite_query_all_orgs, "" },
-    { "DBLOAD", sqlite_to_list, "" },
-    { "PORG", list_query_all_orgs, "" },
+    { "!DBOPEN", sqlite_load, "" },
+    { "!DBCLOSE", sqlite_save, "" },
+    { "!DBPSTU", sqlite_query_all_students, "" },
+    { "!DBPORG", sqlite_query_all_orgs, "" },
+    { "!DBLOAD", sqlite_to_list, "" },
+    { "!PORG", list_query_all_orgs, "" },
     { "DIR", display_orgtree, "Display organization list." },
     { "LS", display_orgtree, "" },
-    { "SQL", sql, "" },
+    { "STU", display_student, "Display student list."},
+    { "!SQL", sql, "" },
+    { "ADDORG", org_add, "Add an orginzation" },
+    { "DELORG", org_del, "Removes an orginzation (and everything under it)" },
 };
 
 static bool mute = false;
@@ -76,6 +79,7 @@ int cls(char *arg) {
 
 int quit(char *arg) {
 	puts("Quitting...");
+    sqlite_save(NULL);
 	return EXIT_FAILURE;
 }
 
@@ -90,7 +94,13 @@ int runcommand(char *s)
 				char *t = s + strlen(commands[i].command);
 				if (isspace(*t)) t++;
 				if ( *t == 0 ) t = NULL;
-				return (*(commands[i].eval))(t);
+                int ret;
+                try {
+                    ret = (*(commands[i].eval))(t);
+                } catch() {
+                    fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+                }
+                return ret;
 			}
 		}
 		sscanf(s, "%20s", temp);

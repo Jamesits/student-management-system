@@ -30,9 +30,16 @@
 #define new(X, ...) (X)malloc((__VA_ARGS__ +1) * sizeof(X))
 #define gets_s(X, ...) gets(X)
 
+// dynamically run sprintf, possible memory leak
+#define dsprintf(...) bstr2cstr(bformat(__VA_ARGS__), ' ')
+
 #include "../ctrycatch/ctrycatch.h"
 
 typedef char* string;
 typedef sqlite3 database;
+
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+#define MAX_ORG_NAME_LEN 80
 
 #endif /* common_h */

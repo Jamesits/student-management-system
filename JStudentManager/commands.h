@@ -19,7 +19,12 @@ COMMAND(sqlite_query_all_students);
 COMMAND(sqlite_to_list);
 COMMAND(sqlite_from_list);
 COMMAND(list_query_all_orgs);
-COMMAND(display_orgtree);
 COMMAND(sql);
+COMMAND(display_orgtree);
+COMMAND(org_add);
+COMMAND(org_del);
+COMMAND(display_student);
+COMMAND(stu_add);
+COMMAND(stu_del);
 
 #endif

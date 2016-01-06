@@ -33,7 +33,8 @@
 */
 static bool first_row = true;
 static int indent_level = -1;
-#define SQLSTMT "select * from `organizations` WHERE `parent` = %s ORDER BY id ASC"
+#define SQLCOUNTSTMT "SELECT COUNT(*) FROM `organizations` WHERE `parent` = %s ORDER BY id ASC"
+#define SQLSTMT "SELECT * FROM `organizations` WHERE `parent` = %s ORDER BY id ASC"
 
 int org_db_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names) {
     int *p_rn = (int*)p_data;
@@ -46,14 +47,17 @@ int org_db_display_callback(void *p_data, int num_fields, char **p_fields, char 
         for (int i = 0; i < indent_level; i++) {
             printf("|   ");
         }
-        printf("`-- ");
+        printf("|-- ");
     }
-    printf("%s", p_fields[1]);
+    printf("[%s]%s", p_fields[0], p_fields[1]);
     printf("\n");
     indent_level++;
-    bstring str = bformat(SQLSTMT, p_fields[0]);
-    string s = bstr2cstr(str, ' ');
-    sqlite_select_stmt_with_custom_callback(db, s, org_db_display_callback);
+    {
+        //int total_counts;
+        bstring str = bformat(SQLSTMT, p_fields[0]);
+        string s = bstr2cstr(str, ' ');
+        sqlite_select_stmt_with_custom_callback(db, s, org_db_display_callback);
+    }
     indent_level--;
     return 0;
 }

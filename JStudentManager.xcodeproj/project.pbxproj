@@ -23,6 +23,7 @@
 		1A8308001C3A62D600A2F204 /* buniutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307F01C3A62D600A2F204 /* buniutil.c */; };
 		1A8308041C3A62D600A2F204 /* utf8util.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8307F91C3A62D600A2F204 /* utf8util.c */; };
 		1A8308081C3B4E6B00A2F204 /* orgtree.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8308061C3B4E6B00A2F204 /* orgtree.c */; };
+		1A83080B1C3BFEEC00A2F204 /* stulist.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8308091C3BFEEC00A2F204 /* stulist.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +76,8 @@
 		1A8307FA1C3A62D600A2F204 /* utf8util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8util.h; sourceTree = "<group>"; };
 		1A8308061C3B4E6B00A2F204 /* orgtree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = orgtree.c; sourceTree = "<group>"; };
 		1A8308071C3B4E6B00A2F204 /* orgtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orgtree.h; sourceTree = "<group>"; };
+		1A8308091C3BFEEC00A2F204 /* stulist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stulist.c; sourceTree = "<group>"; };
+		1A83080A1C3BFEEC00A2F204 /* stulist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stulist.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 			children = (
 				1A8308061C3B4E6B00A2F204 /* orgtree.c */,
 				1A8308071C3B4E6B00A2F204 /* orgtree.h */,
+				1A8308091C3BFEEC00A2F204 /* stulist.c */,
+				1A83080A1C3BFEEC00A2F204 /* stulist.h */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				1A8307961C33F5EF00A2F204 /* sqlite3.c in Sources */,
 				1A8307FD1C3A62D600A2F204 /* bstraux.c in Sources */,
 				1A8307E41C3A3A9A00A2F204 /* commands.c in Sources */,
+				1A83080B1C3BFEEC00A2F204 /* stulist.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

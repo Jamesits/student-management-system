@@ -17,6 +17,7 @@
 int main(int argc, char* argv[]) {
 
     //srand((unsigned)time(NULL));
+    sqlite_load(NULL);
     loop();
     return 0;
 }

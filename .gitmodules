@@ -1,6 +1,6 @@
-[submodule "ctrycatch"]
-	path = ctrycatch
-	url = https://github.com/Jamesits/CTryCatch.git
 [submodule "bstrlib"]
 	path = bstrlib
 	url = https://github.com/websnarf/bstrlib
+[submodule "slre"]
+	path = slre
+	url = https://github.com/cesanta/slre.git

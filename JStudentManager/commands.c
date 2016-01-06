@@ -10,6 +10,7 @@
 #include "commands.h"
 #include "studentdb.h"
 #include "orgtree.h"
+#include "stulist.h"
 #include "model.h"
 
 COMMAND(sqlite_load)
@@ -63,6 +64,7 @@ COMMAND(sqlite_to_list)
     }
     return EXIT_SUCCESS;
 }
+
 COMMAND(sqlite_from_list);
 
 COMMAND(list_query_all_orgs)
@@ -89,5 +91,35 @@ COMMAND(display_orgtree)
 COMMAND(sql)
 {
     sqlite_select_stmt(db, args);
+    return EXIT_SUCCESS;
+}
+
+COMMAND(org_add)
+{
+    if (args == NULL) throw(ArgumentNullException, "No arguments specified");
+    long parent;
+    char name[MAX_ORG_NAME_LEN + 1];
+    
+    if (sscanf(args, "%ld %[^\n]" TOSTRING(MAX_ORG_NAME_LEN) "s", &parent, name) != 2) throw(ArgumentException, "Unable to intercept arguments");
+    sqlite_select_stmt(db, dsprintf("INSERT INTO `organizations` (name, parent) VALUES ('%s', '%ld')" , name, parent));
+    return EXIT_SUCCESS;
+}
+
+COMMAND(org_del)
+{
+    // TODO: delete recursively
+    if (args == NULL) throw(ArgumentNullException, "No arguments specified");
+    while (isspace(*args)) args++;
+    sqlite_select_stmt(db, dsprintf("DELETE FROM `organizations` WHERE id='%s' OR name='%s'" , args, args));
+    return EXIT_SUCCESS;
+}
+
+COMMAND(display_student)
+{
+    try {
+        stu_db_display();
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
     return EXIT_SUCCESS;
 }

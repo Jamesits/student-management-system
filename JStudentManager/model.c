@@ -48,10 +48,10 @@ void sqlite_select_stmt(database *db, const char* stmt) {
     ret = sqlite3_exec(db, stmt, sqlite_select_callback, &nrecs, &errmsg);
     
     if(ret!=SQLITE_OK) {
-        printf("Error in select statement %s [%s].\n", stmt, errmsg);
+        throw(DbException, dsprintf("Error in select statement %s [%s].\n", stmt, errmsg));
     }
     else {
-        printf("\n   %d records returned.\n", nrecs);
+        //printf("\n   %d records returned.\n", nrecs);
     }
 }
 
@@ -65,6 +65,7 @@ void sqlite_select_stmt_with_custom_callback(database *db, const char* stmt, int
     ret = sqlite3_exec(db, stmt, sqlite_select_callback, &nrecs, &errmsg);
     
     if(ret!=SQLITE_OK) {
+        throw(DbException, dsprintf("Error in select statement %s [%s].\n", stmt, errmsg));
     //    printf("Error in select statement %s [%s].\n", stmt, errmsg);
     }
     else {
