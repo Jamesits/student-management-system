@@ -31,14 +31,14 @@
  
  */
 
-#define SQLSTUSTMT "SELECT * FROM `students` WHERE `organization` = %ld ORDER BY id ASC"
+#define SQLSTUSTMT "SELECT id, name, sex, age FROM `students` WHERE `organization` = %ld ORDER BY id ASC"
 #define SQLORGSTMT "SELECT * FROM `organizations` WHERE `parent` = %s ORDER BY id ASC"
 
 int stu_db_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names) {
     int *p_rn = (int*)p_data;
     (*p_rn)++;
     for(int i = 0; i < num_fields; i++) {
-        printf("%20s", p_fields[i]);
+        printf("%-20s", p_fields[i]);
     }
     printf("\n");
     //sqlite_select_stmt_with_custom_callback(db, , stu_db_display_callback);
@@ -55,12 +55,21 @@ void stu_db_display(long org)
         "Age",
     };
     for(int i = 0; i < num_fields; i++) {
-        printf("%20s", p_col_names[i]);
+        printf("%-20s", p_col_names[i]);
     }
     printf("\n");
     for(int i = 0; i< num_fields*20; i++) {
-        printf("=");
+        printf("*");
     }
     printf("\n");
     sqlite_select_stmt_with_custom_callback(db, dsprintf(SQLSTUSTMT, org), stu_db_display_callback);
+}
+
+void stu_db_add(long id, string name, int sex, int age, long org)
+{
+    if (id == -1) {
+        sqlite_select_stmt(db, dsprintf("INSERT INTO `students` (name, sex, age, organization) VALUES ('%s', %d, %d, %ld)", name, sex, age, org));
+    } else {
+        sqlite_select_stmt(db, dsprintf("INSERT INTO `students` (id, name, sex, age, organization) VALUES (%ld, '%s', %d, %d, %ld)", name, sex, age, org));
+    }
 }

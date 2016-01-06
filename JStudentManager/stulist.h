@@ -9,9 +9,10 @@
 #ifndef stulist_h
 #define stulist_h
 
-#include <stdio.h>
+#include "common.h"
 
 int stu_db_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names);
 void stu_db_display();
+void stu_db_add(long id, string name, int sex, int age, long org);
 
 #endif /* stulist_h */

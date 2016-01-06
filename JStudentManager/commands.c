@@ -117,7 +117,42 @@ COMMAND(org_del)
 COMMAND(display_student)
 {
     try {
-        stu_db_display();
+        long org;
+        sscanf(args, "%ld", &org);
+        stu_db_display(org);
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    return EXIT_SUCCESS;
+}
+
+COMMAND(stu_add)
+{
+    long id;
+    char name[MAX_STU_NAME_LEN];
+    bool sex;
+    int age;
+    long org;
+    int temp;
+    printf("ID[auto]: ");
+    temp = scanf("%[^\n]ld", &id);
+    if (temp != 1) id = -1;
+    clearbuffer(stdin);
+    printf("Name: ");
+    scanf(STU_NAME_FMT, name);
+    clearbuffer(stdin);
+    printf("Sex[M/W]: ");
+    temp = getchar();
+    sex = (temp == 'M')?0:1; // TODO: check value
+    clearbuffer(stdin);
+    printf("Age: ");
+    scanf("%d", &age);
+    clearbuffer(stdin);
+    printf("Organization: ");
+    scanf("%ld", &org);
+    clearbuffer(stdin);
+    try {
+        stu_db_add(id, name, sex, age, org);
     } catch() {
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }
