@@ -52,7 +52,7 @@ cmd_dict commands[] = {
     { "FINDSTU", stu_search, "Search students" },
 };
 
-static bool mute = false;
+//static bool mute = false;
 
 bool is_arg_present(char *arg) {
 	if (arg == NULL) return false;
