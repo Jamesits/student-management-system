@@ -101,7 +101,7 @@ COMMAND(org_add)
     char name[MAX_ORG_NAME_LEN + 1];
     
     if (sscanf(args, "%ld %[^\n]" TOSTRING(MAX_ORG_NAME_LEN) "s", &parent, name) != 2) throw(ArgumentException, "Unable to intercept arguments");
-    sqlite_select_stmt(db, dsprintf("INSERT INTO `organizations` (name, parent) VALUES ('%s', '%ld')" , name, parent));
+    org_db_add(-1, name, parent);
     return EXIT_SUCCESS;
 }
 
@@ -111,6 +111,24 @@ COMMAND(org_del)
     if (args == NULL) throw(ArgumentNullException, "No arguments specified");
     while (isspace(*args)) args++;
     sqlite_select_stmt(db, dsprintf("DELETE FROM `organizations` WHERE id='%s' OR name='%s'" , args, args));
+    return EXIT_SUCCESS;
+}
+
+COMMAND(org_modify)
+{
+    if (args == NULL) throw(ArgumentNullException, "No arguments specified");
+    long id;
+    long parent;
+    char name[MAX_ORG_NAME_LEN + 1];
+    if (sscanf(args, "%ld %ld %[^\n]" TOSTRING(MAX_ORG_NAME_LEN) "s", &id, &parent, name) != 3) throw(ArgumentException, "Unable to intercept arguments");
+    transaction_begin();
+    if (org_db_del(id) != DB_OK) {
+        puts("Error: organization not found");
+        transaction_rollback();
+        return EXIT_SUCCESS;
+    }
+    org_db_add(id, name, parent);
+    transaction_commit();
     return EXIT_SUCCESS;
 }
 
@@ -147,7 +165,7 @@ COMMAND(stu_add)
     printf("Name: ");
     scanf(STU_NAME_FMT, name);
     clearbuffer(stdin);
-    printf("Sex[M/W]: ");
+    printf("Sex[M/F]: ");
     temp = getchar();
     sex = (temp == 'M')?0:1; // TODO: check value
     clearbuffer(stdin);
@@ -174,5 +192,43 @@ COMMAND(stu_del)
     } catch() {
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }
+    return EXIT_SUCCESS;
+}
+
+COMMAND(stu_modify)
+{
+    long id;
+    char name[MAX_STU_NAME_LEN];
+    bool sex;
+    int age;
+    long org;
+    int temp;
+    sscanf(args, "%ld", &id);
+    transaction_begin();
+    if (stu_db_del(id) != DB_OK) {
+        puts("Error: student not found");
+        transaction_rollback();
+        return EXIT_SUCCESS;
+    }
+    clearbuffer(stdin);
+    printf("Name: ");
+    scanf(STU_NAME_FMT, name);
+    clearbuffer(stdin);
+    printf("Sex[M/F]: ");
+    temp = getchar();
+    sex = (temp == 'M')?0:1; // TODO: check value
+    clearbuffer(stdin);
+    printf("Age: ");
+    scanf("%d", &age);
+    clearbuffer(stdin);
+    printf("Organization: ");
+    scanf("%ld", &org);
+    clearbuffer(stdin);
+    try {
+        stu_db_add(id, name, sex, age, org);
+    } catch() {
+        fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
+    }
+    transaction_commit();
     return EXIT_SUCCESS;
 }

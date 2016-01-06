@@ -38,7 +38,8 @@ int stu_db_display_callback(void *p_data, int num_fields, char **p_fields, char 
     int *p_rn = (int*)p_data;
     (*p_rn)++;
     for(int i = 0; i < num_fields; i++) {
-        printf("%-20s", p_fields[i]);
+        if (i == 3) printf("%-20s", p_fields[i][0]=='M'?"Male":"Female");
+        else printf("%-20s", p_fields[i]);
     }
     printf("\n");
     //sqlite_select_stmt_with_custom_callback(db, , stu_db_display_callback);
@@ -74,7 +75,7 @@ void stu_db_add(long id, string name, int sex, int age, long org)
     }
 }
 
-void stu_db_del(long id)
+int stu_db_del(long id)
 {
-    sqlite_sql_stmt(db, dsprintf("DELETE FROM `students` WHERE id=%ld", id));
+    return sqlite_sql_stmt(db, dsprintf("DELETE FROM `students` WHERE id=%ld", id));
 }

@@ -68,3 +68,17 @@ void org_db_display()
     indent_level = -1;
     sqlite_select_stmt_with_custom_callback(db, "select * from `organizations` WHERE `parent` IS NULL ORDER BY id ASC", org_db_display_callback);
 }
+
+void org_db_add(long id, string name, long parent)
+{
+    if (id == -1) {
+        sqlite_select_stmt(db, dsprintf("INSERT INTO `organizations` (name, parent) VALUES ('%s', '%ld')" , name, parent));
+    } else {
+        sqlite_select_stmt(db, dsprintf("INSERT INTO `organizations` (id, name, parent) VALUES ('%ld', '%s', '%ld')" , id, name, parent));
+    }
+}
+
+int org_db_del(long id)
+{
+    return sqlite_sql_stmt(db, dsprintf("DELETE FROM `organizations` WHERE id=%ld", id));
+}

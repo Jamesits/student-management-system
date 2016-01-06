@@ -14,6 +14,6 @@
 int stu_db_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names);
 void stu_db_display();
 void stu_db_add(long id, string name, int sex, int age, long org);
-void stu_db_del(long id);
+int stu_db_del(long id);
 
 #endif /* stulist_h */

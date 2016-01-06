@@ -12,5 +12,7 @@
 #include "common.h"
 
 void org_db_display();
+void org_db_add(long id, string name, long parent);
+int org_db_del(long id);
 
 #endif /* orgtree_h */

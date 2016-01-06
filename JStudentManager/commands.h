@@ -23,8 +23,10 @@ COMMAND(sql);
 COMMAND(display_orgtree);
 COMMAND(org_add);
 COMMAND(org_del);
+COMMAND(org_modify);
 COMMAND(display_student);
 COMMAND(stu_add);
 COMMAND(stu_del);
+COMMAND(stu_modify);
 
 #endif
