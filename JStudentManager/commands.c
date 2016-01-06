@@ -132,6 +132,16 @@ COMMAND(org_modify)
     return EXIT_SUCCESS;
 }
 
+COMMAND(org_search)
+{
+    if (args == NULL) throw(ArgumentNullException, "No arguments specified");
+    while (isspace(*args)) {
+        args++;
+    }
+    org_db_search(args);
+    return EXIT_SUCCESS;
+}
+
 COMMAND(display_student)
 {
     try {
@@ -230,5 +240,14 @@ COMMAND(stu_modify)
         fprintf(stderr, "Error: %s\n", __ctrycatch_exception_message_exists ? __ctrycatch_exception_message : "");
     }
     transaction_commit();
+    return EXIT_SUCCESS;
+}
+
+COMMAND(stu_search)
+{
+    while (isspace(*args)) {
+        args++;
+    }
+    stu_db_search(args);
     return EXIT_SUCCESS;
 }

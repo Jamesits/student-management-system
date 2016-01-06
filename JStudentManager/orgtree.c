@@ -36,6 +36,14 @@ static int indent_level = -1;
 #define SQLCOUNTSTMT "SELECT COUNT(*) FROM `organizations` WHERE `parent` = %s ORDER BY id ASC"
 #define SQLSTMT "SELECT * FROM `organizations` WHERE `parent` = %s ORDER BY id ASC"
 
+int org_db_plain_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names) {
+    int *p_rn = (int*)p_data;
+    (*p_rn)++;
+    printf("[%s]%s", p_fields[0], p_fields[1]);
+    printf("\n");
+    return 0;
+}
+
 int org_db_display_callback(void *p_data, int num_fields, char **p_fields, char **p_col_names) {
     int *p_rn = (int*)p_data;
     (*p_rn)++;
@@ -81,4 +89,12 @@ void org_db_add(long id, string name, long parent)
 int org_db_del(long id)
 {
     return sqlite_sql_stmt(db, dsprintf("DELETE FROM `organizations` WHERE id=%ld", id));
+}
+
+void org_db_search(string s)
+{
+    char d[80];
+    char r[80];
+    sscanf(s, "%80s %[^\n]80s", d, r);
+    sqlite_select_stmt_with_custom_callback(db, dsprintf("SELECT * FROM `organizations` WHERE `%s` LIKE '%%%s%%' ORDER BY id ASC", d, r), org_db_plain_display_callback);
 }

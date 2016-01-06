@@ -14,5 +14,6 @@
 void org_db_display();
 void org_db_add(long id, string name, long parent);
 int org_db_del(long id);
+void org_db_search(string s);
 
 #endif /* orgtree_h */

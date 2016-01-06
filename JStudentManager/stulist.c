@@ -38,7 +38,7 @@ int stu_db_display_callback(void *p_data, int num_fields, char **p_fields, char 
     int *p_rn = (int*)p_data;
     (*p_rn)++;
     for(int i = 0; i < num_fields; i++) {
-        if (i == 3) printf("%-20s", p_fields[i][0]=='M'?"Male":"Female");
+        if (i == 2) printf("%-20s", p_fields[i][0]=='0'?"Male":"Female");
         else printf("%-20s", p_fields[i]);
     }
     printf("\n");
@@ -78,4 +78,27 @@ void stu_db_add(long id, string name, int sex, int age, long org)
 int stu_db_del(long id)
 {
     return sqlite_sql_stmt(db, dsprintf("DELETE FROM `students` WHERE id=%ld", id));
+}
+
+void stu_db_search(string s)
+{
+    int num_fields = 4;
+    string p_col_names[] = {
+        "ID",
+        "Name",
+        "Sex",
+        "Age",
+    };
+    for(int i = 0; i < num_fields; i++) {
+        printf("%-20s", p_col_names[i]);
+    }
+    printf("\n");
+    for(int i = 0; i< num_fields*20; i++) {
+        printf("*");
+    }
+    printf("\n");
+    char d[80];
+    char r[80];
+    sscanf(s, "%80s %[^\n]80s", d, r);
+    sqlite_select_stmt_with_custom_callback(db, dsprintf("SELECT * FROM `students` WHERE `%s` LIKE '%%%s%%' ORDER BY id ASC", d, r), stu_db_display_callback);
 }
