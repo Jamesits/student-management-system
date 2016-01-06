@@ -115,7 +115,6 @@
 			children = (
 				1A83080C1C3CECC800A2F204 /* slre */,
 				1A8307E51C3A62D600A2F204 /* bstrlib */,
-				1A8307E11C3A369E00A2F204 /* CommandInterpreter */,
 				1A83079A1C34023200A2F204 /* common.h */,
 				1A8307DB1C3A359C00A2F204 /* CTryCatch */,
 				1A8307DD1C3A35D000A2F204 /* lists */,
@@ -196,6 +195,7 @@
 		1A8308051C3B4E1E00A2F204 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1A8307E11C3A369E00A2F204 /* CommandInterpreter */,
 				1A8308061C3B4E6B00A2F204 /* orgtree.c */,
 				1A8308071C3B4E6B00A2F204 /* orgtree.h */,
 				1A8308091C3BFEEC00A2F204 /* stulist.c */,

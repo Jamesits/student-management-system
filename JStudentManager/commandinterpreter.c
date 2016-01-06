@@ -77,7 +77,7 @@ int cls(char *arg) {
 #ifdef _WIN32
     system("@cls");
 #else
-    system("clear 2>null");
+    system("clear 2>/dev/null");
 #endif
 	puts("");
 	return EXIT_SUCCESS;
